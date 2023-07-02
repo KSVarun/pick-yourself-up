@@ -9,6 +9,7 @@
   </head>
   <body>
     <main>
+      <div class="overlay"></div>
       <section>
         <div class="row">
           <div class="img-container"><img src="./assets/1.jpg" alt="" /></div>
@@ -28,22 +29,27 @@
         </div>
         <div class="row">
           <div class="img-container"><img src="./assets/13.jpg" alt="" /></div>
-          <div class="img-container"><img src="" alt="" /></div>
+          <div class="img-container"><img src="./assets/14.jpg" alt="" /></div>
         </div>
       </section>
     </main>
     <script>
       function sleep() {
         return new Promise((res) => {
-          setTimeout(() => res(), 2000);
+          setTimeout(() => res(), 1500);
         });
       }
       async function slow() {
+        await sleep();
         const imgEl = document.getElementsByTagName('img');
         for (let i = 0; i < imgEl.length; i++) {
           await sleep();
           imgEl[i].classList.add('img-zoom');
         }
+        sleep().then(() => {
+          const overlay = document.getElementsByClassName('overlay');
+          overlay[0].classList.add('falsh');
+        });
       }
       slow();
     </script>

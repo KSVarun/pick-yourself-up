@@ -11,6 +11,28 @@ main{
     background: rgb(36 36 36);
 }
 
+.overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    animation: hide-overlay 6s 1
+}
+
+@keyframes hide-overlay  {
+    from {background: rgb(36 36 36);}
+    to {background: unset;}
+}
+
+.falsh{
+    animation: flash-overlay 2s 1
+}
+
+@keyframes flash-overlay  {
+    from {background: rgb(190, 190, 190);}
+    to {background: unset;}
+}
+
 img{
     width: 300px;
     height: 300px;
@@ -19,7 +41,7 @@ img{
 
 .img-zoom {
     transform: scale(5);
-    translate: 22vw -41.5vh;
+    translate: 22vw -32.5vh;
 }
 
 .row{
